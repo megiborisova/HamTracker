@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 public class FoodConverter : JsonConverter<Food>
 {
     public override Food Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
+    { as
         using var jsonDoc=JsonDocument.Parsevalue(ref reader);
         var root= jsonDoc.RootElement;
 

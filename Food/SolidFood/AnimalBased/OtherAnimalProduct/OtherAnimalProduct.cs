@@ -1,5 +1,11 @@
-class OtherAnimalProduct : AnimalBased
+using System;
+
+namespace CalorieTracker.Models
+{
+    public class OtherAnimalProduct : AnimalBased
     {
+        public OtherAnimalProduct() { }
+
         public OtherAnimalProduct(string name, int calories, double carbs, double protein, double fats)
             : base(name, calories, carbs, protein, fats) { }
 
@@ -8,3 +14,4 @@ class OtherAnimalProduct : AnimalBased
             Console.WriteLine($"{Name} - {Calories} kcal (Other Animal-Based) - {Carbs}g carbs, {Protein}g protein, {Fats}g fats");
         }
     }
+}

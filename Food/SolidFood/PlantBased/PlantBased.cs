@@ -1,5 +1,17 @@
-abstract class PlantBased : Solid
+using System;
+
+namespace CalorieTracker.Models
+{
+    public class Fruit : PlantBased
     {
-        protected PlantBased(string name, int calories, double carbs, double protein, double fats)
+        public Fruit() { }
+
+        public Fruit(string name, int calories, double carbs, double protein, double fats)
             : base(name, calories, carbs, protein, fats) { }
+
+        public override void DisplayInfo()
+        {
+            Console.WriteLine($"{Name} - {Calories} kcal (Fruit) - {Carbs}g carbs, {Protein}g protein, {Fats}g fats");
+        }
     }
+}

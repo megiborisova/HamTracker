@@ -1,10 +1,16 @@
-abstract class Food
+using System;
+
+namespace CalorieTracker.Models
+{
+    public abstract class Food
     {
         public string Name { get; set; }
         public int Calories { get; set; }
         public double Carbs { get; set; }
         public double Protein { get; set; }
         public double Fats { get; set; }
+
+        protected Food() { }
 
         protected Food(string name, int calories, double carbs, double protein, double fats)
         {
@@ -17,3 +23,4 @@ abstract class Food
 
         public abstract void DisplayInfo();
     }
+}

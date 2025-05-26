@@ -1,5 +1,17 @@
-public class Dairy : Solid
+using System;
+
+namespace CalorieTracker.Models
 {
-    public Dairy(string name, int calories, int protein, int carbs, int fat)
-        : base(name, calories, protein, carbs, fat) { }
+    public class Dairy : AnimalBased
+    {
+        public Dairy() { }
+
+        public Dairy(string name, int calories, double carbs, double protein, double fats)
+            : base(name, calories, carbs, protein, fats) { }
+
+        public override void DisplayInfo()
+        {
+            Console.WriteLine($"{Name} - {Calories} kcal (Dairy) - {Carbs}g carbs, {Protein}g protein, {Fats}g fats");
+        }
+    }
 }

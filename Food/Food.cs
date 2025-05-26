@@ -1,24 +1,19 @@
-public abstract class FoodItem
-{
-    public string Name { get; set; }
-    public string Variant { get; set; }
-    public int Calories { get; set; }
-    public int Protein { get; set; }
-    public int Carbs { get; set; }
-    public int Fat { get; set; }
-
-    public FoodItem(string name, string variant, int calories, int protein, int carbs, int fat)
+abstract class Food
     {
-        Name = name;
-        Variant = variant;
-        Calories = calories;
-        Protein = protein;
-        Carbs = carbs;
-        Fat = fat;
-    }
+        public string Name { get; set; }
+        public int Calories { get; set; }
+        public double Carbs { get; set; }
+        public double Protein { get; set; }
+        public double Fats { get; set; }
 
-    public bool ValidateCalories()
-    {
-        return Calories == (Fat * 9 + Protein * 4 + Carbs * 4);
+        protected Food(string name, int calories, double carbs, double protein, double fats)
+        {
+            Name = name;
+            Calories = calories;
+            Carbs = carbs;
+            Protein = protein;
+            Fats = fats;
+        }
+
+        public abstract void DisplayInfo();
     }
-}

@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace CalorieTracker
 {
-    public static class AddNewFood(string foodsFile, List<Food> availableFoods)
+    static class FoodManager
+    {
+        public static void AddNewFoodFlow(string foodsFile, List<Food> availableFoods)
         {
             Console.WriteLine("Enter category (Fruit, Vegetable, Alcoholic, NonAlcoholic, Meat, Dairy, OtherAnimalBased):");
             string category = Console.ReadLine();
@@ -18,18 +19,21 @@ namespace CalorieTracker
                 Console.WriteLine("Invalid calories input.");
                 return;
             }
+
             Console.Write("Enter carbs (g): ");
             if (!double.TryParse(Console.ReadLine(), out double carbs))
             {
                 Console.WriteLine("Invalid carbs input.");
                 return;
             }
+
             Console.Write("Enter protein (g): ");
             if (!double.TryParse(Console.ReadLine(), out double protein))
             {
                 Console.WriteLine("Invalid protein input.");
                 return;
             }
+
             Console.Write("Enter fats (g): ");
             if (!double.TryParse(Console.ReadLine(), out double fats))
             {
@@ -96,7 +100,8 @@ namespace CalorieTracker
             availableFoods.Add(newFood);
 
             // Append food line to the file in the right category section
-            AppendFoodToFile(foodsFile, category, foodLine);
+            FoodFileManager.AppendFoodToFile(foodsFile, category, foodLine);
             Console.WriteLine("Food added successfully.");
         }
+    }
 }

@@ -8,7 +8,7 @@ namespace CalorieTracker
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string currentDir = Directory.GetCurrentDirectory();
             string foodsFile = Path.Combine(currentDir, "foods.txt");

@@ -6,8 +6,7 @@ namespace CalorieTracker
 {
     public static class FoodLoader
     {
-        // Load foods from file
-        static List<Food> LoadFoodsFromFile(string filepath)
+        public static List<Food> LoadFoodsFromFile(string filepath)
         {
             var foods = new List<Food>();
             if (!File.Exists(filepath))
@@ -67,6 +66,5 @@ namespace CalorieTracker
 
             return foods;
         }
-
     }
 }

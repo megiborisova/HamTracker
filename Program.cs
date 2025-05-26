@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using CalorieTracker;
+using CalorieTracker.Models;
 
 namespace CalorieTracker
 {

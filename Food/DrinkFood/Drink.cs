@@ -1,7 +1,10 @@
-public abstract class Drink : Food
-{
-    public Drink(string name, int calories, int protein, int carbs, int fat)
-        : base(name, calories, protein, carbs, fat)
+abstract class Drinks : Food
     {
+        public double VolumeMl { get; set; }
+
+        protected Drinks(string name, int calories, double volume, double carbs, double protein, double fats)
+            : base(name, calories, carbs, protein, fats)
+        {
+            VolumeMl = volume;
+        }
     }
-}

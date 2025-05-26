@@ -1,7 +1,5 @@
-public class PlantBasedFood : SolidFood
-{
-    public PlantBasedFood(string name, string variant, int calories, int protein, int carbs, int fat)
-        : base(name, variant, calories, protein, carbs, fat)
+abstract class PlantBased : Solid
     {
+        protected PlantBased(string name, int calories, double carbs, double protein, double fats)
+            : base(name, calories, carbs, protein, fats) { }
     }
-}

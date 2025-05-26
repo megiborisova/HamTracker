@@ -1,10 +1,17 @@
-abstract class Drinks : Food
-    {
-        public double VolumeMl { get; set; }
+using System;
 
-        protected Drinks(string name, int calories, double volume, double carbs, double protein, double fats)
-            : base(name, calories, carbs, protein, fats)
+namespace CalorieTracker.Models
+{
+    public class NonAlcoholic : Drinks
+    {
+        public NonAlcoholic() { }
+
+        public NonAlcoholic(string name, int calories, double carbs, double protein, double fats)
+            : base(name, calories, carbs, protein, fats) { }
+
+        public override void DisplayInfo()
         {
-            VolumeMl = volume;
+            Console.WriteLine($"{Name} - {Calories} kcal - {Carbs}g carbs, {Protein}g protein, {Fats}g fats");
         }
     }
+}

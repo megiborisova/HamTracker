@@ -1,7 +1,10 @@
-public abstract class Solid : Food
+namespace CalorieTracker.Models
 {
-    public Solid(string name, int calories, int protein, int carbs, int fat)
-        : base(name, calories, protein, carbs, fat)
+    public abstract class Solid : Food
     {
+        protected Solid() { }
+
+        protected Solid(string name, int calories, double carbs, double protein, double fats)
+            : base(name, calories, carbs, protein, fats) { }
     }
-}
+} 
